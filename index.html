@@ -8,7 +8,7 @@
   </head>
   <body>
     <aside class="sidebar">
-      <h1>🧠 Pizarra Infinita</h1>
+      <h1>🖖 Pizarra USS-Projects</h1>
       <section>
         <h2>Proyectos</h2>
         <div class="row">
@@ -32,6 +32,7 @@
       <section>
         <h2>Controles</h2>
         <p>• Arrastra para mover elementos.</p>
+        <p>• Arrastra la esquina inferior derecha para redimensionar.</p>
         <p>• Rueda del mouse para zoom.</p>
         <p>• Shift + arrastrar fondo para navegar.</p>
         <p>• Activa Conectar y haz click en 2 nodos para unirlos.</p>
@@ -50,8 +51,25 @@
           <button class="delete">✕</button>
         </header>
         <div class="content"></div>
+        <button class="resize-handle" title="Redimensionar"></button>
       </article>
     </template>
+
+    <dialog id="timelineDialog">
+      <form id="timelineForm" method="dialog">
+        <h3>Constructor de línea de tiempo</h3>
+        <p>Añade eventos o periodos con fechas.</p>
+        <div id="timelineRows"></div>
+        <div class="dialog-actions top-actions">
+          <button type="button" id="addEventRow">+ Evento</button>
+          <button type="button" id="addPeriodRow">+ Periodo</button>
+        </div>
+        <menu class="dialog-actions">
+          <button type="button" id="cancelTimeline">Cancelar</button>
+          <button type="submit" id="saveTimeline">Guardar</button>
+        </menu>
+      </form>
+    </dialog>
 
     <script src="app.js"></script>
   </body>
