@@ -63,6 +63,8 @@ input { flex: 1; }
 #boardList li .name { cursor: pointer; flex: 1; }
 
 .tools { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; }
+.secondary-action { margin-bottom: .55rem; width: 100%; }
+.secondary-action:disabled { opacity: .45; cursor: not-allowed; }
 #connectMode.active {
   background: linear-gradient(90deg, #2d6290, #3d4f99);
   border-color: var(--accent);
@@ -107,6 +109,10 @@ input { flex: 1; }
 }
 .header-actions { display: flex; gap: .3rem; align-items: center; }
 .pill-smaller, .pill-bigger, .pill-color { font-size: .72rem; padding: .15rem .35rem; }
+.header-actions { position: relative; }
+.pill-palette { position: absolute; top: 28px; right: 0; display: none; grid-template-columns: repeat(4, 16px); gap: 6px; padding: 6px; background: #0e1730; border: 1px solid #5f88b4; border-radius: 8px; z-index: 4; }
+.pill-palette.open { display: grid; }
+.pill-swatch { width: 16px; height: 16px; border-radius: 50%; padding: 0; border: 1px solid rgba(255,255,255,.5); cursor: pointer; }
 .node .delete { border: 0; background: transparent; color: var(--danger); font-size: 1rem; padding: 0; }
 .node .content { padding: .75rem; overflow: auto; max-height: calc(100% - 46px); }
 .node[data-type="note"] .content { font-size: calc(0.95rem * var(--pill-scale, 1)); }
